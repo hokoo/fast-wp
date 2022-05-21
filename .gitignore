@@ -1,0 +1,10 @@
+vendor/*
+.env
+
+wp/*
+wp-content/*
+index.php
+wp-config.php
+
+.idea/*
+# logs

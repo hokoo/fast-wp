@@ -8,3 +8,6 @@ if [ ! -f ./.env ]; then
 else
     echo "File .env already exists."
 fi
+
+touch install/nginx/access.log
+touch install/php-fpm/error.log

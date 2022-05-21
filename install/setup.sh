@@ -1,5 +1,11 @@
 #!/bin/bash
 
 # run from project root directory
+bash ./install/setup-env.sh
 
-docker-compose exec php sh -c "composer install && bash ./install/setup-env.sh && bash ./install/setup-wp.sh"
+echo "Containers creating..."
+docker-compose up -d
+echo "Containers created."
+
+echo "Composer install..."
+docker-compose exec php sh -c "composer install && bash ./install/setup-wp.sh"

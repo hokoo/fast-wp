@@ -9,5 +9,18 @@ else
     echo "File .env already exists."
 fi
 
+# import variables from .env file
+. ./.env
+
+# configure nginx.conf
+echo "nginx.conf ..."
+if [ ! -f ./install/nginx/nginx.conf ]; then
+  NGINXCONFIG=$(< ./install/.example/nginx.conf.template)
+  printf "$NGINXCONFIG" $PROJECT_BASE_URL $PROJECT_BASE_URL $PROJECT_BASE_URL > ./install/nginx/nginx.conf
+fi
+echo "Ok."
+
+echo "Creating access.log error.log  ..."
 touch install/nginx/access.log
 touch install/php-fpm/error.log
+echo "Ok."

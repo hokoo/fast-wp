@@ -9,5 +9,5 @@ wp-config.php
 .idea/*
 
 # logs
-install/nginx/access.log
+install/nginx/*
 install/php-fpm/error.log

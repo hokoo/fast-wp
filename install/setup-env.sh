@@ -14,6 +14,7 @@ fi
 
 # configure nginx.conf
 echo "nginx.conf ..."
+[ ! -d ./install/nginx/ ] && mkdir -p ./install/nginx/
 if [ ! -f ./install/nginx/nginx.conf ]; then
   NGINXCONFIG=$(< ./install/.example/nginx.conf.template)
   printf "$NGINXCONFIG" $PROJECT_BASE_URL $PROJECT_BASE_URL $PROJECT_BASE_URL > ./install/nginx/nginx.conf

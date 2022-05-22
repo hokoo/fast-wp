@@ -7,8 +7,7 @@ case "$item" in
     rm -rf ./wp
     rm -rf ./wp-content
     rm -f ./wp-config.php
-    rm -f ./install/nginx/nginx.conf
-    rm -f ./install/nginx/access.log
+    rm -rf ./install/nginx
     rm -f ./install/php-fpm/error.log
     rm -f ./.env
       ;;

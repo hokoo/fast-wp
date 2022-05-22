@@ -14,7 +14,7 @@ function site_is_ssl() {
 	return ! empty( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] !== 'off';
 }
 
-$host = (isset($_SERVER['HTTP_HOST'])) ? $_SERVER['HTTP_HOST']: 'devitron.loc';
+$host = (isset($_SERVER['HTTP_HOST'])) ? $_SERVER['HTTP_HOST']: '%s';
 define( 'WP_CONTENT_URL', ( site_is_ssl() ? 'https' : 'http' ) . '://' . $host . '/wp-content' );
 const WP_CONTENT_DIR = devSITE_ROOT . '/wp-content';
 if ( ! defined('ABSPATH') ) {

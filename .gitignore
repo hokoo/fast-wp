@@ -1,8 +1,8 @@
-vendor/*
+vendor
 .env
 
-wp/*
-wp-content/*
+wp/
+wp-content/
 index.php
 wp-config.php
 

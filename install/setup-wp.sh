@@ -17,7 +17,7 @@ require( './wp/wp-blog-header.php' );" > index.php
 
 if [ ! -f wp-config.php ]; then
   WPCONFIG=$(< ./install/.example/wp-config.php.template)
-  printf "$WPCONFIG" $PROJECT_BASE_URL > ./wp-config.php
+  printf "$WPCONFIG" $DB_NAME $DB_USER $DB_PASSWORD $DB_HOST $PROJECT_BASE_URL > ./wp-config.php
 fi
 
 # install WP

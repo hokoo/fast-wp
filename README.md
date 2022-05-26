@@ -14,15 +14,15 @@ Linux, Docker Compose
 
 ## Notice
 
-Call all scripts from root project directory.
+Call all commands from root project directory.
 
 ## Installation
 
-`bash ./install/setup.sh`
+`make setup.all`
 
 If you wanna customize `.env` file, first run 
 
-`bash ./install/setup-env.sh`
+`make setup.env`
 
 and customize environment variables.
 
@@ -33,4 +33,4 @@ Don't forget renew your hosts file
 
 To remove all configs and WP-files, run
 
-`bash ./install/clear.sh`
+`make clear.all`

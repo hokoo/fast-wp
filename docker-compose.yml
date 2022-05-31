@@ -20,7 +20,7 @@ services:
       context: install/php-fpm
       args:
         NWP_PHP_VER: $PHP_TAG
-    container_name: "${PROJECT_NAME}_wodby_php"
+    container_name: "${PROJECT_NAME}_php"
     environment:
       PHP_SENDMAIL_PATH: /usr/sbin/sendmail -t -i -S mailhog:1025
       DB_HOST: $DB_HOST
@@ -35,7 +35,7 @@ services:
       - devsite-network
 
   nginx:
-    container_name: "${PROJECT_NAME}_wodby_nginx"
+    container_name: "${PROJECT_NAME}_nginx"
     image: nginx:alpine
     working_dir: /var/www/html/
     depends_on:

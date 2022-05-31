@@ -12,39 +12,12 @@
     {
       "type": "composer",
       "url": "https://wpackagist.org"
-    },
-    {
-      "type": "package",
-      "package": {
-        "name": "rarst/wordpress",
-        "type": "wordpress-core",
-        "version": "5.2",
-        "source": {
-          "url": "https://github.com/WordPress/WordPress",
-          "type": "git",
-          "reference": "5.2"
-        },
-        "require": {
-          "johnpbloch/wordpress-core-installer": "~0.1"
-        }
-      }
-    },
-    {
-      "type": "package",
-      "package": {
-        "name": "wordpress/wordpress",
-        "version": "5.8",
-        "type": "wordpress-core",
-        "dist": {
-          "type": "zip",
-          "url": "https://github.com/WordPress/WordPress/archive/5.4.1.zip"
-        }
-      }
     }
   ],
   "require": {
-    "wordpress/wordpress": "^5.8",
+    "johnpbloch/wordpress-core-installer": "*",
     "composer/installers": "^1.0@dev",
+    "johnpbloch/wordpress": "^5",
     "mobiledetect/mobiledetectlib": "^2.8",
     "wpackagist-plugin/classic-editor": "^1.5",
     "wpackagist-plugin/wp-smtp": "^1.1",
@@ -69,7 +42,8 @@
   },
   "config": {
     "allow-plugins": {
-      "composer/installers": true
+      "composer/installers": true,
+      "johnpbloch/wordpress-core-installer": true
     }
   }
 }

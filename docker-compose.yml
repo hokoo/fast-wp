@@ -43,8 +43,8 @@ services:
     volumes:
       - ./:/var/www/html/
       - ./install/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
-      - ./install/php-fpm/error.log:/var/log/php/devitron.error.log
-      - ./install/nginx/access.log:/var/log/nginx/devitron.access.log
+      - ./install/php-fpm/error.log:/var/log/php/${PROJECT_BASE_URL}.error.log
+      - ./install/nginx/access.log:/var/log/nginx/${PROJECT_BASE_URL}.access.log
     ports:
       - "80:80"
       - "443:443"

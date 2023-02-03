@@ -5,16 +5,13 @@ echo "WP setup preparing..."
 # import variables from .env file
 . ./.env
 
-# prepare file structure
-cp -rn ./wordpress/wp-content/* ./wp-content
-
 [ ! -f ./index.php ] && echo "<?php
 define( 'WP_USE_THEMES', true );
 require( './wordpress/wp-blog-header.php' );" > index.php
 
 if [ ! -f wp-config.php ]; then
   WPCONFIG=$(< ./install/.example/wp-config.php.template)
-  printf "$WPCONFIG" $DB_NAME $DB_USER $DB_PASSWORD $DB_HOST $PROJECT_BASE_URL > ./wp-config.php
+  printf "$WPCONFIG" $DB_NAME $DB_USER $DB_PASSWORD $DB_HOST > ./wp-config.php
 fi
 
 # install WP
